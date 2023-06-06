@@ -31,26 +31,26 @@ def displayplot(df):
     st.pyplot(fig)
 
 # Add a title and intro text
-st.title('Earthquake Data Explorer')
+st.title('Earthquake Data Explorer 🌍')
 st.text('This is a web app to allow exploration of Earthquake Data')
 
 # Sidebar setup
-st.sidebar.title('Sidebar')
+st.sidebar.title('📚 Sidebar')
 upload_file = st.sidebar.file_uploader('Upload a file containing earthquake data')
 #Sidebar navigation
-st.sidebar.title('Navigation')
-options = st.sidebar.radio('Select what you want to display:', ['Home', 'Data Summary', 'Data Header', 'Scatter Plot'])
+st.sidebar.title('🔍 Navigation')
+options = st.sidebar.radio('Select what you want to display:', ['🏠 Home', '📊 Data Summary', '🗒️ Data Header', '📈 Scatter Plot'])
 
 # Check if file has been uploaded
 if upload_file is not None:
     df = pd.read_csv(upload_file)
 
 # Navigation options
-if options == 'Home':
+if options == '🏠 Home':
     home(upload_file)
-elif options == 'Data Summary':
+elif options == '📊 Data Summary':
     data_summary(df)
-elif options == 'Data Header':
+elif options == '🗒️ Data Header':
     data_header(df)
-elif options == 'Scatter Plot':
+elif options == '📈 Scatter Plot':
     displayplot(df)
